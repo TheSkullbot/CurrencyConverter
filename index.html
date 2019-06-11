@@ -1,0 +1,111 @@
+<html lang="fr">
+  <head>
+    <title>Currency Converter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Libs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+    <!-- Data -->
+    <script src="data/fallback.js"></script>
+    <!-- Traductions -->
+    <script src="i18n/en.js"></script>
+    <script src="i18n/fr.js"></script>
+    <!-- Controlleurs -->
+    <script src="js/Currency.js"></script>
+    <!-- Styles -->
+    <link rel="shortcut icon" href="img/favicon.png"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="https://fonts.googleapis.com/css?family=Monoton|Sarpanch">
+    <link rel="stylesheet" type="text/css" media="screen" href="https://use.fontawesome.com/releases/v5.0.4/css/all.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/neon.css">
+    <script>
+      var key = "140a79e51c69def9505a1086a7677899";
+    </script>
+  </head>
+  <body ng-app="PowerGlove">
+
+    <div id="bg"></div>
+
+    <div ng-controller="Currency" ng-init="loadRates()">
+      <div id="loader">
+        <h1 class="neon-b monoton">
+          {{ i18n[locale].LOADING }}
+        </h1>
+        <img src="img/loading.gif" alt="" />
+      </div>
+
+      <form id="page">
+
+        <a id="audio" class="neon-p" ng-click="toggleMusic()">
+          <i ng-show="bgm" class="fas fa-volume-up"></i>
+          <i ng-show="!bgm" class="fas fa-volume-down"></i>
+          <audio id="bgm" src="bgm/bgm.ogg" loop></audio>
+        </a>
+
+        <a id="i18n" class="neon-p" ng-click="toggleLang()">
+          <i ng-show="locale === 'en'" class="neon-p fas fa-language"></i>
+          <i ng-show="locale === 'fr'" class="neon-b fas fa-language"></i>
+        </a>
+
+        <h1 id="title">
+          {{ i18n[locale].APP_NAME }}
+        </h1>
+
+        <div id="part-1">
+          <label for="currency">
+            1. {{ i18n[locale].SELECT_CURRENCY }}
+          </label>
+          <select id="currency" ng-model="to.currency" ng-change="convertFromEUR()">
+            <option ng-repeat="(key,_) in rates" value="{{ key }}">
+              {{ key }} - {{ i18n[locale].CURRENCIES[key] }}
+            </option>
+          </select>
+        </div>
+
+        <div id="part-2">
+          <div>
+            2. {{ i18n[locale].ENTER_AMOUNT }}
+          </div>
+          <table>
+            <tr>
+              <td style="width: 49vw;">
+                <input id="from" type="number" ng-model="from.amount" ng-change="convertFromEUR()" step="1" min="0" />
+              </td>
+              <td style="width: 2vw;">
+
+              </td>
+              <td style="width: 49vw;">
+                <input id="to" type="number" ng-model="to.amount" ng-change="convertToEUR()" step="1" min="0" />
+              </td>
+            </tr>
+            <tr class="neon-b">
+              <th>
+                <label for="from">
+                  EUR
+                </label>
+              </th>
+              <th></th>
+              <th>
+                <label for="to">
+                  {{ to.currency }}
+                </label>
+              </th>
+            </tr>
+          </table>
+        </div>
+
+        <div class="sarpanch neon-b">
+          <div id="rate-from">
+            1.00 EUR = {{ rates[to.currency] }} {{ to.currency }}
+          </div>
+          <div id="rate-to">
+            1.00 {{ to.currency }} = {{ (1 / rates[to.currency]).toFixed( 6 ) }} EUR
+          </div>
+        </div>
+
+        <!-- Petit easter egg si on essaye de convertir en € ;) -->
+        <div ng-if="to.currency == 'EUR'" style="max-width: 90vw; text-align: center; margin: 20px auto auto;">
+          <img src="img/bravo.gif" class="neon-p-box" style="width: 150px; max-width: 90vw;" alt=""/>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

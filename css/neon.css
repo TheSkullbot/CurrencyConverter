@@ -1,0 +1,253 @@
+html
+{
+  background  : black;
+  overflow    : hidden;
+  width       : 100%;
+  height      : 100%;
+  text-align  : center;
+  color       : #EEEEEE;
+  text-shadow : 0 0 15px #F96AFF;
+}
+
+html, body
+{
+  padding     : 0;
+  margin      : 0;
+  color       : white;
+  font-family : "Sarpanch", sans-serif;
+  font-size   : 130%;
+}
+
+table, tr, td
+{
+  border-collapse : collapse;
+}
+
+th
+{
+  font-size : 22pt;
+}
+
+td
+{
+  text-align : center;
+}
+
+input, select
+{
+  width         : 100%;
+  text-align    : center;
+  font-size     : 14pt;
+  border        : none;
+  border-radius : 5px;
+  padding       : 5px;
+  background    : rgba(255, 255, 255, 0.95);
+  box-shadow    : 0 0 15px #F96AFF;
+  font-family   : "Sarpanch", sans-serif;
+}
+
+#page
+{
+  display        : none;
+  vertical-align : center;
+  width          : 90vw;
+  max-width      : 600px;
+  margin         : auto;
+}
+
+#rate-from
+{
+  margin     : 15px auto 0;
+  font-size  : 14pt;
+  text-align : center;
+}
+
+#rate-to
+{
+  margin     : 0 auto 20px;
+  font-size  : 14pt;
+  text-align : center;
+}
+
+#title
+{
+  width           : 100%;
+  margin          : 40px auto 20px;
+  font-family     : "Monoton", monospace;
+  font-size       : 26pt;
+  text-decoration : none;
+  transition      : all 0.5s;
+  color           : #FFFFFF;
+  animation       : neon-p 1.5s ease-in-out infinite alternate;
+}
+
+#part-1
+{
+  width  : 100%;
+  margin : auto;
+}
+
+#part-2
+{
+  width      : 100%;
+  margin     : 10px auto;
+  text-align : center;
+}
+
+#audio
+{
+  position   : fixed;
+  top        : 15px;
+  left       : 15px;
+  font-size  : 14pt;
+  z-index    : 9999;
+  width      : 20px;
+  height     : 20px;
+  display    : block;
+  text-align : left;
+  cursor     : pointer;
+}
+
+#i18n
+{
+  position   : fixed;
+  top        : 10px;
+  right      : 25px;
+  font-size  : 18pt;
+  z-index    : 9999;
+  width      : 20px;
+  height     : 20px;
+  display    : block;
+  text-align : right;
+  cursor     : pointer;
+}
+
+#loader
+{
+  position       : fixed;
+  display        : table-cell;
+  vertical-align : middle;
+  top            : 0;
+  left           : 0;
+  right          : 0;
+  background     : black;
+  width          : 100vw;
+  height         : 100vh;
+  text-align     : center;
+  z-index        : 999;
+}
+
+#loader > h1
+{
+  position : relative;
+  top      : 30px;
+}
+
+#loader > img
+{
+  margin    : auto;
+  width     : 90vw;
+  max-width : 100px;
+}
+
+#bg
+{
+  position        : fixed;
+  top             : 0;
+  left            : 0;
+  right           : 0;
+  bottom          : 0;
+  overflow        : hidden;
+  width           : 100vw;
+  height          : 100vh;
+  text-align      : center;
+  background      : url('../img/bg.gif') center;
+  background-size : cover;
+  color           : #EEEEEE;
+  z-index         : -1;
+  filter          : blur(20px);
+  opacity         : 0.75;
+}
+
+.monoton
+{
+  font-family : "Monoton", monospace;
+  font-size   : 26pt;
+}
+
+.sarpanch
+{
+  font-family : "Sarpanch", monospace;
+}
+
+.neon-p
+{
+  text-decoration : none;
+  transition      : all 0.5s;
+  color           : #FFFFFF;
+  animation       : neon-p 1.5s ease-in-out infinite alternate;
+}
+
+.neon-b
+{
+  text-decoration : none;
+  transition      : all 0.5s;
+  color           : #5AFFFF;
+  animation       : neon-b 1.5s ease-in-out infinite alternate;
+}
+
+.neon-p-box
+{
+  text-decoration : none;
+  transition      : all 0.5s;
+  animation       : neon-p-box 1.5s ease-in-out infinite alternate;
+  border          : 2px solid white;
+}
+
+footer
+{
+  position    : absolute;
+  bottom      : 5px;
+  left        : 10px;
+  right       : 10px;
+  font-family : "Sarpanch", monospace;
+  font-size   : 14pt;
+  color       : #5AFFFF;
+  animation   : neon-b 1.5s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes neon-b
+{
+  from
+  {
+    text-shadow : 0 0 5px #5AFFFF, 0 0 10px #003CFF, 0 0 10px #003CFF, 0 0 20px #003CFF;
+  }
+  to
+  {
+    text-shadow : 0 0 2px #5AFFFF, 0 0 5px #003CFF, 0 0 5px #003CFF, 0 0 10px #003CFF;
+  }
+}
+
+@-webkit-keyframes neon-p
+{
+  from
+  {
+    text-shadow : 0 0 5px #FFFFFF, 0 0 10px #FFFFFF, 0 0 20px #F96AFF, 0 0 35px #F96AFF, 0 0 40px #F96AFF;
+  }
+  to
+  {
+    text-shadow : 0 0 2px #FFFFFF, 0 0 5px #FFFFFF, 0 0 10px #F96AFF, 0 0 17px #F96AFF, 0 0 20px #F96AFF;
+  }
+}
+
+@-webkit-keyframes neon-p-box
+{
+  from
+  {
+    box-shadow : 0 0 5px #FFFFFF, 0 0 10px #FFFFFF, 0 0 20px #F96AFF, 0 0 35px #F96AFF, 0 0 40px #F96AFF;
+  }
+  to
+  {
+    box-shadow : 0 0 2px #FFFFFF, 0 0 5px #FFFFFF, 0 0 10px #F96AFF, 0 0 17px #F96AFF, 0 0 20px #F96AFF;
+  }
+}

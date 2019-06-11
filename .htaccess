@@ -1,0 +1,19 @@
+IndexOptions +Charset=UTF-8
+AddDefaultCharset UTF-8
+
+Options -Indexes
+Options +FollowSymlinks
+Options -MultiViews
+
+RewriteEngine On
+RewriteBase /
+
+<Files *.*>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files update.js>
+    Order Allow,Deny
+    Deny from all
+</Files>
