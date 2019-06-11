@@ -17,6 +17,10 @@ sans pour autant passer par les modèles plus complexes de Angular 2+ et le Type
 Ce n'est évidemment pas une solution à long terme, mais reste à mon sens une bonne entrée en matière
 pour aborder le concept de data-binding et des frameworks Javascript en général.
 
+## Démo
+
+Une démo est disponible à [cette adresse](https://www.skullbot.fr/oclock/).
+
 ## Installation
 
 ### Etape 0 : Cloner le dépôt
