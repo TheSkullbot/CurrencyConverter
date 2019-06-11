@@ -67,13 +67,13 @@
           <table>
             <tr>
               <td style="width: 49vw;">
-                <input id="from" type="number" ng-model="from.amount" ng-change="convertFromEUR()" step="1" min="0" />
+                <input id="from" type="number" ng-model="from.amount" ng-model-options="{allowInvalid: true}" ng-change="convertFromEUR()" step="1" min="0" />
               </td>
               <td style="width: 2vw;">
 
               </td>
               <td style="width: 49vw;">
-                <input id="to" type="number" ng-model="to.amount" ng-change="convertToEUR()" step="1" min="0" />
+                <input id="to" type="number" ng-model="to.amount" ng-model-options="{allowInvalid: true}" ng-change="convertToEUR()" step="1" min="0" />
               </td>
             </tr>
             <tr class="neon-b">
