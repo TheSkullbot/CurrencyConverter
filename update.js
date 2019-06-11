@@ -10,7 +10,7 @@ const http = require( 'http' );
 const fs   = require( 'fs' );
 
 // API
-const key = "140a79e51c69def9505a1086a7677899";
+const key = "YOUR_API_KEY_HERE";
 const url = "http://data.fixer.io/api/latest?access_key=" + key + "&format=1";
 
 // Requête AJAX
