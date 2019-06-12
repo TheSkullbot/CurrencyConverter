@@ -35,15 +35,16 @@ td
 
 input, select
 {
-  width         : 100%;
-  text-align    : center;
-  font-size     : 14pt;
-  border        : none;
-  border-radius : 5px;
-  padding       : 5px;
-  background    : rgba(255, 255, 255, 0.95);
-  box-shadow    : 0 0 15px #F96AFF;
-  font-family   : "Sarpanch", sans-serif;
+  width           : 100%;
+  text-align      : center;
+  text-align-last : center;
+  font-size       : 14pt;
+  border          : none;
+  border-radius   : 5px;
+  padding         : 5px;
+  background      : rgba(255, 255, 255, 0.95);
+  box-shadow      : 0 0 15px #F96AFF;
+  font-family     : "Sarpanch", sans-serif;
 }
 
 #page
