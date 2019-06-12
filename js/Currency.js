@@ -22,7 +22,7 @@ angular.module( 'PowerGlove', [] ).controller( 'Currency', function( $document, 
   $scope.to   = {amount : 0.00, currency : "USD"};
 
   // Taux de changes
-  $scope.rates = {};
+  $scope.rates = null;
 
   // Background music
   $scope.bgm = false;
@@ -48,7 +48,7 @@ angular.module( 'PowerGlove', [] ).controller( 'Currency', function( $document, 
   /* Récupération des taux de change */
   $scope.loadRates = function(){
     // On essaye de récupérer dans le localStorage pour économiser une requête
-    var local = (localStorage.getItem( 'rates' ) === null) ? [] : JSON.parse( localStorage.getItem( 'rates' ) );
+    var local = (localStorage.getItem( 'rates' ) === null) ? null : JSON.parse( localStorage.getItem( 'rates' ) );
 
     // Si le localStorage est vide ou date de plus de 24h, on fait la requête, sinon on lit juste le localStorage
     if( local === null || local.timestamp === 0 || Date.now() - local.timestamp < 3600 * 24 * 1000 )
