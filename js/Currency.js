@@ -51,7 +51,7 @@ angular.module( 'PowerGlove', [] ).controller( 'Currency', function( $document, 
     var local = (localStorage.getItem( 'rates' ) === null) ? null : JSON.parse( localStorage.getItem( 'rates' ) );
 
     // Si le localStorage est vide ou date de plus de 24h, on fait la requête, sinon on lit juste le localStorage
-    if( local === null || local.timestamp === 0 || Date.now() - local.timestamp < 3600 * 24 * 1000 )
+    if( local === null || typeof(local.timestamp) === "undefined" || local.timestamp === 0 || Date.now() - local.timestamp < 3600 * 24 * 1000 )
     {
       $http( {
         url     : "data/fixer.json", // Mis à jour quotidiennement par un script NodeJS (update.js)
